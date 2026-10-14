@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="description" content="Fades & Cuts Barbershop in High Point, NC. Sharp cuts, clean fades, and classic barbershop service.">
+  <title>Fades &amp; Cuts Barbershop | High Point, NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #0f0f0f;
+      --panel: #171715;
+      --gold: #d4af37;
+      --cream: #f2eee5;
+      --muted: #a29d91;
+      --line: rgba(212, 175, 55, .24);
+      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: "Oswald", Impact, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(100% - 40px, 1120px);
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    .site-header {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .nav {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .94rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .55rem;
+      font-weight: 400;
+      letter-spacing: .22em;
+    }
+
+    .nav-link {
+      padding: 11px 16px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .nav-link:hover, .nav-link:focus-visible {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      min-height: 650px;
+      min-height: min(760px, 100svh);
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 76% 43%, rgba(212, 175, 55, .11), transparent 37%),
+        linear-gradient(112deg, #0f0f0f 0%, #121210 62%, #17150f 100%);
+    }
+
+    .hero::after {
+      position: absolute;
+      top: 17%;
+      right: -115px;
+      width: min(52vw, 620px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(212, 175, 55, .1);
+      border-radius: 50%;
+      box-shadow: 0 0 0 55px rgba(212, 175, 55, .025), 0 0 0 110px rgba(212, 175, 55, .02);
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding-top: 72px;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      margin: 21px 0 15px;
+      font-size: clamp(3.8rem, 14vw, 8.2rem);
+      font-weight: 600;
+      letter-spacing: -.045em;
+      line-height: .91;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--gold);
+    }
+
+    .hero-copy {
+      max-width: 410px;
+      margin: 23px 0 30px;
+      color: #b9b4a9;
+      font-family: var(--serif);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 21px;
+      border: 1px solid var(--gold);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .button-primary:hover, .button-primary:focus-visible {
+      border-color: #ead078;
+      background: #ead078;
+    }
+
+    .button-secondary { color: var(--cream); }
+
+    .button-secondary:hover, .button-secondary:focus-visible {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 50px;
+      color: var(--muted);
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .hero-note::before {
+      width: 34px;
+      height: 1px;
+      background: var(--gold);
+      content: "";
+    }
+
+    section { padding: 86px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin: 12px 0 0;
+      font-size: clamp(2.7rem, 8vw, 4.5rem);
+      font-weight: 500;
+      letter-spacing: -.025em;
+      line-height: .98;
+      text-transform: uppercase;
+    }
+
+    .section-intro {
+      max-width: 245px;
+      margin: 0 0 3px;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: .9rem;
+      line-height: 1.6;
+    }
+
+    .services { background: #141412; }
+
+    .service-list { border-top: 1px solid var(--line); }
+
+    .service {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 10px 18px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service h3 {
+      margin: 0;
+      font-size: 1.16rem;
+      font-weight: 500;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+    }
+
+    .service p {
+      grid-column: 1;
+      margin: -4px 0 0;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: .83rem;
+      line-height: 1.5;
+    }
+
+    .price {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .details-grid {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .detail-card {
+      min-height: 230px;
+      padding: 27px 24px;
+      background: var(--ink);
+    }
+
+    .detail-card h2 {
+      margin: 24px 0 17px;
+      font-size: 2.4rem;
+    }
+
+    .hours-list {
+      display: grid;
+      max-width: 330px;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: #c7c2b8;
+      font-family: var(--serif);
+      font-size: .88rem;
+    }
+
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .hours-list li span:last-child { color: var(--gold); }
+
+    .detail-copy {
+      margin: 0;
+      color: #c7c2b8;
+      font-family: var(--serif);
+      font-size: .92rem;
+      line-height: 1.75;
+    }
+
+    .detail-copy strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--cream);
+      font-family: "Oswald", Impact, sans-serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .detail-copy a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-decoration-color: rgba(212, 175, 55, .5);
+      text-underline-offset: 4px;
+    }
+
+    .site-footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .footer-brand {
+      color: var(--cream);
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .footer-contact, .copyright {
+      color: var(--muted);
+      font-size: .68rem;
+      letter-spacing: .08em;
+    }
+
+    .footer-contact a { color: var(--gold); }
+    .copyright { width: 100%; margin: 0; }
+
+    a:focus-visible {
+      outline: 2px solid var(--cream);
+      outline-offset: 4px;
+    }
+
+    @media (min-width: 680px) {
+      .wrap { width: min(100% - 72px, 1120px); }
+      .hero { min-height: min(800px, 100svh); }
+      .hero-content { padding-top: 50px; }
+      .hero h1 { font-size: clamp(6rem, 11vw, 9rem); }
+      section { padding: 110px 0; }
+      .service { grid-template-columns: minmax(190px, .8fr) 1.5fr auto; }
+      .service p { grid-column: 2; grid-row: 1; margin: 0; }
+      .price { grid-column: 3; grid-row: 1; }
+      .details-grid { grid-template-columns: 1fr 1fr; }
+      .detail-card { min-height: 270px; padding: 32px; }
+      .copyright { width: auto; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Fades & Cuts Barbershop home">
+        <span>Fades &amp; Cuts<small>Barbershop · High Point, NC</small></span>
+      </a>
+      <a class="nav-link" href="tel:+13365550100">Book Now</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-content wrap">
+        <span class="eyebrow">High Point, North Carolina</span>
+        <h1 id="hero-title">Own Your <span>Look.</span></h1>
+        <p class="hero-copy">Good cuts. Good conversation. No shortcuts. Your neighborhood barbershop for the details that make the difference.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="tel:+13365550100">Call to book · (336) 555-0100</a>
+          <a class="button button-secondary" href="#services">Explore services</a>
+        </div>
+        <div class="hero-note">Classic craft. Fresh perspective.</div>
+      </div>
+    </section>
+
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">The service menu</span>
+            <h2 id="services-title">The right cut.</h2>
+          </div>
+          <p class="section-intro">Come in for the clean-up. Leave with the confidence.</p>
+        </div>
+        <div class="service-list">
+          <article class="service">
+            <h3>Signature Cut</h3>
+            <p>A tailored cut, finished sharp and styled your way.</p>
+            <span class="price">$35</span>
+          </article>
+          <article class="service">
+            <h3>Cut + Beard</h3>
+            <p>Fresh cut paired with a clean, considered beard shape-up.</p>
+            <span class="price">$50</span>
+          </article>
+          <article class="service">
+            <h3>Kids' Cut</h3>
+            <p>Patient, polished cuts for the next generation.</p>
+            <span class="price">$25</span>
+          </article>
+          <article class="service">
+            <h3>Hot Towel Shave</h3>
+            <p>A close, classic shave with a little room to unwind.</p>
+            <span class="price">$30</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit" aria-labelledby="visit-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Come through</span>
+            <h2 id="visit-title">Make yourself at home.</h2>
+          </div>
+        </div>
+        <div class="details-grid">
+          <div class="detail-card">
+            <span class="eyebrow">Shop hours</span>
+            <h2>When we're in.</h2>
+            <ul class="hours-list">
+              <li><span>Monday – Friday</span><span>9 AM – 7 PM</span></li>
+              <li><span>Saturday</span><span>9 AM – 5 PM</span></li>
+              <li><span>Sunday</span><span>Closed</span></li>
+            </ul>
+          </div>
+          <div class="detail-card">
+            <span class="eyebrow">Find the shop</span>
+            <h2>Right here in H.P.</h2>
+            <p class="detail-copy">
+              <strong>High Point, NC 27260</strong>
+              Call ahead to book your chair.
+              <br><a href="tel:+13365550100">(336) 555-0100</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner wrap">
+      <span class="footer-brand">Fades &amp; Cuts Barbershop</span>
+      <span class="footer-contact">High Point, NC 27260 · <a href="tel:+13365550100">(336) 555-0100</a></span>
+      <p class="copyright">© 2026 Fades &amp; Cuts Barbershop. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
